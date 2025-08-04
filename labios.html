@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/labios.css">
+</head>
+<body>
+  <!-- logo / menus -->
+    <div class="cabecera">
+    <div class="logo">
+      <img src="img/logo1.jpg" width="40%">
+    </div>
+    <div class="menu">
+      <div class="menus">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html" class="active">Productos</a>
+        <a href="escaneo.html">Escaneo Facial</a>
+        <a href="consejos.html">Videos y Consejos</a>
+      </div>
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Buscar...">
+      <button>🔍</button>
+    </div>
+  </div>
+  </div>
+
+  <div class="contenedor"> 
+    <!-- menu lateral -->
+    <div class="lateral">
+      <h3>Categorías</h3>
+      <ul>
+        <li><a href="productos.html">Todos los productos</a></li>
+        <li><a href="rostro.html">Rostro</a></li>
+        <li><a href="ojos.html">Ojos</a></li>
+        <li><a href="labios.html">Labios</a></li>
+        <li><a href="accesorios.html">Brochas y Accesorios</a></li>
+      </ul>
+  </div>
+
+    <!-- productos -->
+    <div class="contenido">
+      <h2>Labios</h2>
+      <div class="productos">
+        <div class="producto">
+          <img src="img/18.jpg">
+          <p class="marca">Maybelline</p>
+          <p class="precio">S/ 39.90</p>
+          <p class="nombre">SuperStay Matte Ink</p>
+          <p class="tonos"><strong>Tonos:</strong> Rosa Porcelana, Beige Rosado, Cacao Dorado, Chocolate Neutro</p>
+        </div>
+        
+        <div class="producto">
+          <img src="img/19.jpg">
+          <p class="marca">NYX</p>
+          <p class="precio">S/ 34.90</p>
+          <p class="nombre">Soft Matte Lip Cream</p>
+          <p class="tonos"><strong>Tonos:</strong> Vainilla Suave, Arena Natural, Rosa Porcelana, Chocolate Neutro</p>
+        </div>
+        
+        <div class="producto">
+          <img src="img/20.jpg">
+          <p class="marca">Huda Beauty</p>
+          <p class="precio">S/ 99.90</p>
+          <p class="nombre">Liquid Matte Lipstick</p>
+          <p class="tonos"><strong>Tonos:</strong> Marfil Neutro, Rosa Frambuesa, Cacao Dorado, Ebano Frío</p>
+        </div>
+        
+        <div class="producto">
+          <img src="img/21.jpg">
+          <p class="marca">MAC</p>
+          <p class="precio">S/ 89.00</p>
+          <p class="nombre">Matte Lipstick</p>
+          <p class="tonos"><strong>Tonos:</strong> Rosa Palo, Rojo Vino, Nude Tostado</p>
+        </div>
+        
+        <div class="producto">
+          <img src="img/22.jpg">
+          <p class="marca">Charlotte Tilbury</p>
+          <p class="precio">S/ 139.00</p>
+          <p class="nombre">KISSING Lipstick</p>
+          <p class="tonos"><strong>Tonos:</strong> Rosa Bebé, Nude Rosado, Coral</p>
+        </div>
+        
+        <div class="producto">
+          <img src="img/23.jpg">
+          <p class="marca">L’Bel</p>
+          <p class="precio">S/ 52.00</p>
+          <p class="nombre">Infini Barra</p>
+          <p class="tonos"><strong>Tonos:</strong> Melocotón, Coral Oscuro, Rojo Ladrillo</p>
+        </div>
+        
+        <div class="producto">
+          <img src="img/24.jpg">
+          <p class="marca">Fenty Beauty</p>
+          <p class="precio">S/ 115.00</p>
+          <p class="nombre">Gloss Bomb Universal Lip Luminizer</p>
+          <p class="tonos"><strong>Tonos:</strong> Rosa Palo, Nude Tostado, Marrón Rojizo</p>
+        </div>
+        
+        <div class="producto">
+          <img src="img/25.jpg">
+          <p class="marca">NYX</p>
+          <p class="precio">S/ 39.90</p>
+          <p class="nombre">Fat Oil Lip Drip</p>
+          <p class="tonos"><strong>Tonos:</strong> Cacao Dorado, Chocolate Neutro, Nude Oscuro</p>
+        </div>
+        
+        <div class="producto">
+          <img src="img/26.jpg">
+          <p class="marca">e.l.f.</p>
+          <p class="precio">S/ 29.90</p>
+          <p class="nombre">Lip Lacquer</p>
+          <p class="tonos"><strong>Tonos:</strong> Vainilla Suave, Marfil Neutro, Rosa Porcelana</p>
+        </div>
+      </div>
+
+  </div>
+
+
+
+<!-- Script del chatbot -->
+ 
+<div id="chatbot-container">
+  <div id="chat-messages"></div>
+  <div id="chat-input-area">
+    <input type="text" id="chat-input" placeholder="Escribe aquí...">
+    <button id="send-btn">Enviar</button>
+  </div>
+  <button id="open-chat">💬</button>
+</div>
+
+<script>
+  const chatBtn = document.getElementById('open-chat');
+  const chatBox = document.getElementById('chat-messages');
+  const inputArea = document.getElementById('chat-input-area');
+  const input = document.getElementById('chat-input');
+  const sendBtn = document.getElementById('send-btn');
+
+  function mostrarMensaje(texto, clase = '') {
+    const p = document.createElement('p');
+    p.className = clase;
+    p.innerHTML = texto;
+    chatBox.appendChild(p);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  function detectarCategoria() {
+    const url = window.location.href;
+    if (url.includes("rostro")) return "rostro";
+    if (url.includes("ojos")) return "ojos";
+    if (url.includes("labios")) return "labios";
+    return "general";
+  }
+
+  function obtenerEscaneo() {
+    const datos = localStorage.getItem("tonoDetectado");
+    return datos ? JSON.parse(datos) : null;
+  }
+
+  function mostrarResumenEscaneo(tono) {
+    return `
+      <strong>Resultados del escaneo:</strong><br>
+      Nombre: ${tono.name}<br>
+      Tono: ${tono.tono}<br>
+      Subtono: ${tono.subtono}<br>
+      Base recomendada: ${tono.base}<br>
+      Descripción: ${tono.descripcion}
+    `;
+  }
+
+  function recomendarProductos(tono, categoria) {
+    const productos = document.querySelectorAll(".producto");
+    let encontrados = [];
+
+    productos.forEach(prod => {
+      const texto = prod.querySelector(".tonos").innerText.toLowerCase();
+      if (
+        texto.includes(tono.subtono.toLowerCase()) ||
+        texto.includes(tono.tono.toLowerCase())
+      ) {
+        encontrados.push(prod.querySelector(".marca").innerText + " - " + 
+        prod.querySelector(".nombre").innerText + " (" + prod.querySelector(".precio").innerText + ")");
+      }
+    });
+
+    if (encontrados.length > 0) {
+      mostrarMensaje(`<strong>Productos recomendados para tu subtono ${tono.subtono}:</strong><br><ul>` 
+        + encontrados.map(p => `<li> ${p}</li>`).join('') + "</ul>");
+    } else {
+      mostrarMensaje(`No encontré productos que coincidan con tu subtono <strong>${tono.subtono}</strong> en esta categoría.`);
+    }
+  }
+
+  chatBtn.addEventListener("click", () => {
+    const visible = chatBox.style.display === "flex";
+
+    chatBox.style.display = visible ? "none" : "flex";
+    inputArea.style.display = visible ? "none" : "flex";
+
+    if (!visible) {
+      chatBox.innerHTML = "";
+
+      const tono = obtenerEscaneo();
+
+      if (tono) {
+        mostrarMensaje(mostrarResumenEscaneo(tono));
+        mostrarMensaje("<em>Escribe 'recomiéndame' para obtener sugerencias.</em>", "sugerencia");
+      } else {
+        mostrarMensaje("Aún no realizaste el escaneo facial.");
+      }
+    }
+  });
+
+  sendBtn.addEventListener("click", () => {
+    const texto = input.value.trim().toLowerCase();
+    if (texto === "") return;
+
+    mostrarMensaje(`<strong>Tú:</strong> ${texto}`, "usuario");
+    input.value = "";
+
+    if (texto.includes("recomienda") || texto.includes("sugerencia") || texto.includes("recomiendame")) {
+      const tono = obtenerEscaneo();
+      const categoria = detectarCategoria();
+      if (tono) {
+        recomendarProductos(tono, categoria);
+      } else {
+        mostrarMensaje("No encontré resultados de escaneo.");
+      }
+    } else {
+      mostrarMensaje("Escribe 'recomiéndame' para obtener productos según tu tono de piel.");
+    }
+  });
+</script>
+
+</body>
+</html>
