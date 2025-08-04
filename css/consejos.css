@@ -1,0 +1,337 @@
+body {
+  margin: 0px 0px;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f7f1e9;
+  color: #333;
+}
+
+/*cabecera*/
+.cabecera {
+  display: flex;
+  justify-content: row;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #ffffff;
+}
+
+.logo{
+  width: 30%;
+}
+/*menu*/
+.menu{
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+}
+.menus a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 50px;
+  font-size: 18px;
+  
+}
+.menus a.active {
+  border-bottom: 4px solid #a85c5c;
+}
+.menus a:hover {
+  border-bottom: 4px solid #a85c5c;
+}
+
+
+/*lupa*/
+.search{
+  width: 30%;
+  
+  
+}
+.search input {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f7f1e9;
+  color: #333;
+}
+
+.search button {
+  background: none;
+  border: none;
+  font-size: 18px;
+}
+
+
+/*consejos*/
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.consejo {
+  background-color: #fff0f5;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.consejo:hover {
+  transform: translateY(-5px);
+}
+
+.consejo h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #d63384;
+}
+
+.consejo p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+
+
+
+/*contenido*/
+
+.blog {
+  padding: 50px;
+  background-color: #f7f1e9;
+  display: flex;
+  flex-direction: row;
+}
+
+.titulo{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 36px;
+  color: #395c3b;
+}
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.post {
+  background: #f9f9f9;
+  width: 350px;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+}
+
+.post img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.post h3 {
+  margin: 15px 0 10px;
+  font-size: 20px;
+}
+
+.post p {
+  font-size: 14px;
+  color: #666;
+}
+
+.post a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #a85c5c;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+/* === Tablets y celulares grandes: 601px a 1024px === */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .cabecera {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 30px;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .menu {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .menus a {
+    margin: 20px;
+    font-size: 16px;
+  }
+
+  .search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .search input {
+    width: 70%;
+  }
+
+  .blog {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .posts {
+    justify-content: center;
+  }
+
+  .post {
+    width: 80%;
+  }
+
+  .tarjetas {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+
+/* === Celulares medianos: 481px a 600px === */
+@media (min-width: 481px) and (max-width: 600px) {
+  .cabecera {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .menu {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .menus a {
+    margin: 12px;
+    font-size: 15px;
+  }
+
+  .search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .search input {
+    width: 80%;
+  }
+
+  .blog {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .titulo {
+    font-size: 26px;
+  }
+
+  .post {
+    width: 90%;
+  }
+
+  .tarjetas {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* === Celulares pequeños: hasta 480px === */
+@media (max-width: 480px) {
+  .cabecera {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .menu {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menus a {
+    margin: 8px 0;
+    font-size: 14px;
+  }
+
+  .search {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .search input {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  .blog {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .titulo {
+    font-size: 24px;
+  }
+
+  .posts {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .post {
+    width: 100%;
+  }
+
+  .tarjetas {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .consejo h3 {
+    font-size: 1rem;
+  }
+
+  .consejo p {
+    font-size: 0.85rem;
+  }
+}

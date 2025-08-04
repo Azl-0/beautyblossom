@@ -1,0 +1,410 @@
+body {
+  margin: 0px 0px;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f7f1e9;
+  color: #333;
+}
+
+/*cabecera*/
+.cabecera {
+  display: flex;
+  justify-content: row;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #ffffff;
+}
+
+.logo{
+  width: 30%;
+}
+/*menu*/
+.menu{
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+}
+.menus a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 50px;
+  font-size: 18px;
+  
+}
+.menus a.active {
+  border-bottom: 4px solid #a85c5c;
+}
+.menus a:hover {
+  border-bottom: 4px solid #a85c5c;
+}
+
+
+
+/*lupa*/
+.search{
+  width: 30%;
+  
+  
+}
+.search input {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f7f1e9;
+  color: #333;
+}
+
+.search button {
+  background: none;
+  border: none;
+  font-size: 18px;
+}
+
+
+/*contenido general*/
+.conte {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+}
+
+.contenido {
+  display: flex;
+  justify-content: row;
+}
+
+.texto h1 {
+  font-family:'Playfair Display', serif;
+  font-size: 70px;
+  color: #395c3b;
+  font-weight: lighter;
+  text-align: left;
+  width: 70%;
+
+}
+
+.texto p {
+  font-size: 20px;
+  max-width: 700px;
+  text-align: justify;
+}
+
+/*boton escanear*/
+.escanear {
+  padding: 10px 20px;
+  background-color: #395c3b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+/*tajetas*/
+
+.tarjetas {
+  display: flex;
+  align-items: row;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 70%;
+  gap: 30px;
+  position: relative;
+  top: -170px; 
+
+}
+
+.tarjeta{
+  width: 50%;
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+}
+.tarjeta img {
+  width: 50px;
+  margin-right: 15px;
+}
+
+.tarjeta h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.tarjeta p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+
+
+/*imagenes*/
+
+.seccionimg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  
+}
+
+/*para la imagen de fondo*/
+.imgfondo {
+  position: relative;
+  width: 700px;
+  height: 700px;
+}
+
+.imgback {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.imgprincipal {
+  position: absolute;
+  width: 300px;
+  border-radius: 50%;
+}
+
+
+/* === Tablets y laptops pequeñas (601px a 1024px) === */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .cabecera {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 30px;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .menu {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .menus a {
+    margin: 20px;
+    font-size: 16px;
+  }
+
+  .search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .conte {
+    margin: 0 5%;
+  }
+
+  .contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .texto h1 {
+    font-size: 48px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .texto p {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .tarjetas {
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    top: -100px;
+  }
+
+  .tarjeta {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .imgfondo {
+    width: 500px;
+    height: 500px;
+  }
+
+  .imgprincipal {
+    width: 200px;
+  }
+}
+
+/* === Celulares medianos (481px a 600px) === */
+@media (min-width: 481px) and (max-width: 600px) {
+  .cabecera {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .logo, .menu {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menus a {
+    margin: 12px;
+    font-size: 15px;
+  }
+
+  .search {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .search input {
+    width: 80%;
+  }
+
+  .conte {
+    margin: 0 5%;
+  }
+
+  .contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .texto h1 {
+    font-size: 36px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .texto p {
+    font-size: 16px;
+    text-align: justify;
+  }
+
+  .tarjetas {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    top: -80px;
+  }
+
+  .tarjeta {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .imgfondo {
+    width: 350px;
+    height: 350px;
+  }
+
+  .imgprincipal {
+    width: 150px;
+  }
+}
+
+/* === Celulares pequeños (hasta 480px) === */
+@media (max-width: 480px) {
+  .cabecera {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .menu {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menus a {
+    margin: 8px 0;
+    font-size: 14px;
+  }
+
+  .search {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .search input {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  .conte {
+    margin: 0 5%;
+  }
+
+  .contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .texto h1 {
+    font-size: 28px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .texto p {
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  .escanear {
+    width: 100%;
+    text-align: center;
+  }
+
+  .tarjetas {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    top: -50px;
+  }
+
+  .tarjeta {
+    width: 100%;
+    padding: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tarjeta img {
+    margin-bottom: 10px;
+  }
+
+  .imgfondo {
+    width: 280px;
+    height: 280px;
+  }
+
+  .imgprincipal {
+    width: 120px;
+  }
+}
+
